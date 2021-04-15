@@ -3,8 +3,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 3223152 (Merge branch 'main' into typing-cleanup)
+=======
+>>>>>>> parent of af7b7cd (Merge pull request #20 from shabegom/add-eslint)
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -12,6 +15,9 @@ module.exports = {
     sourceType: 'module',
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of af7b7cd (Merge pull request #20 from shabegom/add-eslint)
   extends: [
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
@@ -19,6 +25,7 @@ module.exports = {
   ],
   rules: {},
 };
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
@@ -75,3 +82,5 @@ module.exports = {
   },
 };
 >>>>>>> parent of 3223152 (Merge branch 'main' into typing-cleanup)
+=======
+>>>>>>> parent of af7b7cd (Merge pull request #20 from shabegom/add-eslint)
