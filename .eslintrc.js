@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -11,3 +12,30 @@ module.exports = {
   ],
   rules: {},
 };
+=======
+module.exports = {
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+    }
+};
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)

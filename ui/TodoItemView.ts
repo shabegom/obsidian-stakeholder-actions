@@ -12,6 +12,7 @@ enum TodoItemViewPane {
   Stakeholder,
 }
 
+<<<<<<< HEAD
 enum TodoSortStates {
   None = 0,
   DateAsc = 1,
@@ -26,10 +27,13 @@ enum TodoSortStates {
   FullTextDesc = 10,
 }
 
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 export interface TodoItemViewProps {
   todos: TodoItem[];
   openFile: (filePath: string) => void;
   toggleTodo: (todo: TodoItem, newStatus: TodoItemStatus) => void;
+<<<<<<< HEAD
   isInboxVisible:       boolean;
   isAgingVisible:       boolean;
   isTodayVisible:       boolean;
@@ -42,12 +46,15 @@ export interface TodoItemViewProps {
   scheduledTooltip:     string;
   stakeholderTooltip:   string;
   somedayTooltip:       string;
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 }
 
 interface TodoItemViewState {
   activePane: TodoItemViewPane;
 }
 
+<<<<<<< HEAD
 interface TodoSortState {
   state: TodoSortStates,
 }
@@ -59,6 +66,13 @@ export class TodoItemView extends ItemView {
   private filter: string;
   private filterRegexp: RegExp;
   private sortStateCount;
+=======
+export class TodoItemView extends ItemView {
+  private props: TodoItemViewProps;
+  private state: TodoItemViewState;
+  private filter: string;
+  private filterRegexp: RegExp;
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 
   constructor(leaf: WorkspaceLeaf, props: TodoItemViewProps) {
     //debugger;
@@ -67,10 +81,13 @@ export class TodoItemView extends ItemView {
     this.state = {
       activePane: TodoItemViewPane.Today,
     };
+<<<<<<< HEAD
     this.sortState = {
       state: TodoSortStates.None,
     };
     this.sortStateCount = Object.values(TodoSortStates).length/2;
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
     this.filter = '';
   }
   
@@ -90,6 +107,7 @@ export class TodoItemView extends ItemView {
     return Promise.resolve();
   }
 
+<<<<<<< HEAD
   public setDisplayProps(props: TodoItemViewProps) {
     this.props.isInboxVisible = props.isInboxVisible;
     this.props.isAgingVisible = props.isAgingVisible;
@@ -106,6 +124,8 @@ export class TodoItemView extends ItemView {
     this.render();
   }
   
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
   public setProps(setter: (currentProps: TodoItemViewProps) => TodoItemViewProps): void {
     this.props = setter(this.props);
     this.render();
@@ -113,6 +133,7 @@ export class TodoItemView extends ItemView {
 
   private setViewState(newState: TodoItemViewState) {
     this.state = newState;
+<<<<<<< HEAD
     if(newState.activePane == TodoItemViewPane.Aging || newState.activePane == TodoItemViewPane.Scheduled || newState.activePane == TodoItemViewPane.Today)
       this.sortState = {state: TodoSortStates.DateAsc};
     else if (newState.activePane == TodoItemViewPane.Stakeholder)
@@ -124,12 +145,15 @@ export class TodoItemView extends ItemView {
 
   private setSortState(newState: TodoSortState) {
     this.sortState = newState;
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
     this.render();
   }
 
   private setFilter(filter: string) {
     this.filter = filter;
     this.filterRegexp = new RegExp(filter,'i');
+<<<<<<< HEAD
     this.renderViewItemsOnly();
   }
 
@@ -139,6 +163,9 @@ export class TodoItemView extends ItemView {
     container.createDiv('todo-item-view-items', (el) => {
       this.renderItems(el);
     });
+=======
+    this.render();
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
   }
 
   private render(): void {
@@ -158,6 +185,7 @@ export class TodoItemView extends ItemView {
   }
 
   private renderSearch(container: HTMLDivElement) {
+<<<<<<< HEAD
     const activeClass = () => {
       if (this.sortState.state == TodoSortStates.None) 
         return ' none';
@@ -206,6 +234,28 @@ export class TodoItemView extends ItemView {
         const nextSortState = (this.sortState.state + 1) % this.sortStateCount;
         this.setSortState({state: nextSortState});
         //(<HTMLElement>e.target).setAttribute('aria-label',sortLabel(nextSortState));
+=======
+    container.createEl('table',{},(el) => {
+      el.addClass('todo-filter-wrapper');
+      el.createEl('tr', {}, (el) => {
+        el.addClass('todo-filter-row');
+        el.createEl('td', {}, (el) => {
+          el.addClass('todo-filter-col-input');
+          el.createEl("input", {value: this.filter}, (el) => {
+            el.addClass('todo-filter-input');
+            el.setAttribute('placeholder','proj/person RexExp filter, case insensitive');
+            el.onchange = (e) => {
+              this.setFilter((<HTMLInputElement>e.target).value);
+            };
+          });
+        });
+        el.createEl('td',{}, (el) => {
+          el.addClass('todo-filter-col-button');
+          el.createEl("button", {text: "Filter"}, (el) => {
+            el.addClass('todo-filter-button');
+          });
+        });
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       });
     });
   }
@@ -223,6 +273,7 @@ export class TodoItemView extends ItemView {
       this.setViewState(newState);
     };
 
+<<<<<<< HEAD
     if (this.props.isInboxVisible)
       container.createDiv(`todo-item-view-toolbar-item${activeClass(TodoItemViewPane.Inbox)}`, (el) => {
         el.appendChild(RenderIcon(Icon.Inbox, this.props.inboxTooltip));
@@ -268,6 +319,44 @@ export class TodoItemView extends ItemView {
                             .filter(this.filterForState, this);
     const sortedTodos = todosToRender.sort(sortView);
     sortedTodos
+=======
+    container.createDiv(`todo-item-view-toolbar-item${activeClass(TodoItemViewPane.Inbox)}`, (el) => {
+      el.appendChild(RenderIcon(Icon.Inbox, 'Inbox: No date set, no stakeholder action set, not a someday / maybe item.'));
+      el.onClickEvent(() => setActivePane(TodoItemViewPane.Inbox));
+    });
+
+    container.createDiv(`todo-item-view-toolbar-item${activeClass(TodoItemViewPane.Aging)}`, (el) => {
+      el.appendChild(RenderIcon(Icon.Aging, 'Aging'));
+      el.onClickEvent(() => setActivePane(TodoItemViewPane.Aging));
+    });
+
+    container.createDiv(`todo-item-view-toolbar-item${activeClass(TodoItemViewPane.Today)}`, (el) => {
+      el.appendChild(RenderIcon(Icon.Today, 'Scheduled for Today'));
+      el.onClickEvent(() => setActivePane(TodoItemViewPane.Today));
+    });
+
+    container.createDiv(`todo-item-view-toolbar-item${activeClass(TodoItemViewPane.Scheduled)}`, (el) => {
+      el.appendChild(RenderIcon(Icon.Scheduled, 'Scheduled for a future date'));
+      el.onClickEvent(() => setActivePane(TodoItemViewPane.Scheduled));
+    });
+
+    container.createDiv(`todo-item-view-toolbar-item${activeClass(TodoItemViewPane.Stakeholder)}`, (el) => {
+      el.appendChild(RenderIcon(Icon.Stakeholder, 'Stakeholder actions: discussWith, promisedTo, waitingFor. Only items that have a valid project or person will show up here. Stakeholder actions without project or person are in the Inbox.'));
+      el.onClickEvent(() => setActivePane(TodoItemViewPane.Stakeholder));
+    });
+
+    container.createDiv(`todo-item-view-toolbar-item${activeClass(TodoItemViewPane.Someday)}`, (el) => {
+      el.appendChild(RenderIcon(Icon.Someday, 'Tagged as Someday / Maybe'));
+      el.onClickEvent(() => setActivePane(TodoItemViewPane.Someday));
+    });
+  }
+
+  private renderItems(container: HTMLDivElement) {
+    const todosToRender = this.props.todos
+                            .filter(this.filterForState, this)
+                            .sort(this.sortByActionDate);
+    todosToRender
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       .forEach((todo,index) => {
         if(index>0) {
           if( (todo.isWaitingForNote && todosToRender[index-1].isDiscussWithNote) || 
@@ -302,6 +391,7 @@ export class TodoItemView extends ItemView {
       });
   }
 
+<<<<<<< HEAD
   private sortView(a: TodoItem, b: TodoItem) {
     let sortResult = 0;
     switch (this.sortState.state) {
@@ -361,6 +451,15 @@ export class TodoItemView extends ItemView {
     const hasPersonOrProject = value.person!='' || value.project!='';
     const isPeopleActionNote = value.isDiscussWithNote || value.isWaitingForNote || value.isPromisedToNote;
     if (!isFilterSet || isPersonMatch || isProjectMatch || isMiscMatch) {
+=======
+  private filterForState(value: TodoItem, _index: number, _array: TodoItem[]): boolean {
+    const isPersonMatch = value.person.match(this.filterRegexp) != null; 
+    const isProjectMatch = value.project.match(this.filterRegexp) != null;   
+    const isFilterSet = this.filter!="";
+    const hasPersonOrProject = value.person!='' || value.project!='';
+    const isPeopleActionNote = value.isDiscussWithNote || value.isWaitingForNote || value.isPromisedToNote;
+    if (!isFilterSet || isPersonMatch || isProjectMatch) {
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       const isToday = (date: Date) => {
         let today = new Date();
         return (
@@ -397,6 +496,41 @@ export class TodoItemView extends ItemView {
     } else return false;
   }
 
+<<<<<<< HEAD
+=======
+  private sortByActionDate(a: TodoItem, b: TodoItem): number {
+    if (!a.actionDate && !b.actionDate) {
+      if (a.isDiscussWithNote && !b.isDiscussWithNote) {
+        return -1;
+      }
+      if (a.isWaitingForNote && !b.isDiscussWithNote && !b.isWaitingForNote) {
+        return -1;
+      }
+      if (a.isPromisedToNote && !b.isDiscussWithNote && !b.isWaitingForNote) {
+        return -1;
+      }
+      if (b.isDiscussWithNote && !a.isDiscussWithNote) {
+        return 1;
+      }
+      if (b.isWaitingForNote && !a.isDiscussWithNote && !a.isWaitingForNote) {
+        return 1;
+      }
+      if (b.isPromisedToNote && !a.isDiscussWithNote && !a.isWaitingForNote) {
+        return 1;
+      }     
+
+      if (a.isSomedayMaybeNote && !b.isSomedayMaybeNote) {
+        return -1;
+      }
+      if (!a.isSomedayMaybeNote && b.isSomedayMaybeNote) {
+        return 1;
+      }
+      return 0;
+    }
+    return a.actionDate < b.actionDate ? -1 : a.actionDate > b.actionDate ? 1 : 0;
+  }
+
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
   private toggleTodo(todo: TodoItem): void {
     this.props.toggleTodo(todo, TodoItemStatus.toggleStatus(todo.status));
   }

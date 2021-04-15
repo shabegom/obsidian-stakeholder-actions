@@ -19,7 +19,10 @@ export default class ActionTrackerPlugin extends Plugin {
     return {
       personRegexp: new RegExp (this.getSettingValue('personRegexpString')),
       projectRegexp: new RegExp (this.getSettingValue('projectRegexpString')),
+<<<<<<< HEAD
       miscRegexp:    new RegExp (this.getSettingValue('miscRegexpString')),
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       dateRegexp: new RegExp (this.getSettingValue('dateRegexpString')),
       discussWithRegexp: new RegExp (this.getSettingValue('discussWithRegexpString')),
       waitingForRegexp: new RegExp (this.getSettingValue('waitingForRegexpString')),
@@ -46,6 +49,7 @@ export default class ActionTrackerPlugin extends Plugin {
         toggleTodo: (todo: TodoItem, newStatus: TodoItemStatus) => {
           this.todoIndex.setStatus(todo, newStatus);
         },
+<<<<<<< HEAD
         isInboxVisible:       this.getSettingValue('isInboxVisible'),
         isAgingVisible:       this.getSettingValue('isAgingVisible'),
         isTodayVisible:       this.getSettingValue('isTodayVisible'),
@@ -58,6 +62,8 @@ export default class ActionTrackerPlugin extends Plugin {
         scheduledTooltip:     this.getSettingValue('scheduledTooltip'),
         stakeholderTooltip:   this.getSettingValue('stakeholderTooltip'),
         somedayTooltip:       this.getSettingValue('somedayTooltip'),
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       };
       this.view = new TodoItemView(leaf, props);
       return this.view;
@@ -104,11 +110,16 @@ export default class ActionTrackerPlugin extends Plugin {
 		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
 	}
 
+<<<<<<< HEAD
 	async saveFilterSettings() {
+=======
+	async saveSettings() {
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 		await this.saveData(this.settings);
     await this.todoIndex.reloadIndex(this.getTodoItemIndexProps());
 	}
 
+<<<<<<< HEAD
   async saveViewDisplaySettings() {
 		await this.saveData(this.settings);
     this.view.setDisplayProps({
@@ -130,6 +141,8 @@ export default class ActionTrackerPlugin extends Plugin {
     });
   }
 
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
   getSettingValue<K extends keyof ActionTrackerSettings>(setting: K): ActionTrackerSettings[K] {
     return this.settings[setting]
   }

@@ -22,20 +22,27 @@ export class TodoParser {
     const dateMatches = description.match(this.props.dateRegexp);
     let actionDate = undefined;
     if (dateMatches != null) {
+<<<<<<< HEAD:model/TodoParser.ts
       if(dateMatches.length == 4) {
         actionDate = new Date(parseInt(dateMatches[1]), parseInt(dateMatches[2])-1,parseInt(dateMatches[3]),0, 0, 0, 0);
       } else if (dateMatches.length == 2) {
         actionDate = new Date(dateMatches[1]);
       } 
+=======
+      actionDate = dateMatches.length > 3 ? new Date(parseInt(dateMatches[1]), parseInt(dateMatches[2])-1,parseInt(dateMatches[3]),0, 0, 0, 0) : undefined;
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoParser.ts
     }  
     const personMatches = description.match(this.props.personRegexp);
     const person = personMatches != null ? personMatches[1] : "";
 
     const projectMatches = description.match(this.props.projectRegexp);
     const project = projectMatches != null ? projectMatches[1] : "";
+<<<<<<< HEAD:model/TodoParser.ts
 
     const miscMatches = description.match(this.props.miscRegexp);
     const misc = miscMatches != null ? miscMatches.length == 2 ? miscMatches[1] : "" : "";
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoParser.ts
 
     return new TodoItem(
       status,
