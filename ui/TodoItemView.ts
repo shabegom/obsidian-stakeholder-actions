@@ -15,6 +15,7 @@ enum TodoItemViewPane {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 enum TodoSortStates {
   None = 0,
   DateAsc = 1,
@@ -35,10 +36,13 @@ enum TodoSortStates {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 export interface TodoItemViewProps {
   todos: TodoItem[];
   openFile: (filePath: string) => void;
   toggleTodo: (todo: TodoItem, newStatus: TodoItemStatus) => void;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -60,12 +64,15 @@ export interface TodoItemViewProps {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 }
 
 interface TodoItemViewState {
   activePane: TodoItemViewPane;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -85,6 +92,8 @@ export class TodoItemView extends ItemView {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 export class TodoItemView extends ItemView {
   private props: TodoItemViewProps;
   private state: TodoItemViewState;
@@ -92,6 +101,9 @@ export class TodoItemView extends ItemView {
   private filterRegexp: RegExp;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
@@ -108,10 +120,13 @@ export class TodoItemView extends ItemView {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     this.sortState = {
       state: TodoSortStates.None,
     };
     this.sortStateCount = Object.values(TodoSortStates).length/2;
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
@@ -140,6 +155,7 @@ export class TodoItemView extends ItemView {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   public setDisplayProps(props: TodoItemViewProps) {
     this.props.isInboxVisible = props.isInboxVisible;
     this.props.isAgingVisible = props.isAgingVisible;
@@ -162,6 +178,8 @@ export class TodoItemView extends ItemView {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
   public setProps(setter: (currentProps: TodoItemViewProps) => TodoItemViewProps): void {
     this.props = setter(this.props);
     this.render();
@@ -169,6 +187,7 @@ export class TodoItemView extends ItemView {
 
   private setViewState(newState: TodoItemViewState) {
     this.state = newState;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -189,12 +208,15 @@ export class TodoItemView extends ItemView {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
     this.render();
   }
 
   private setFilter(filter: string) {
     this.filter = filter;
     this.filterRegexp = new RegExp(filter,'i');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -207,6 +229,9 @@ export class TodoItemView extends ItemView {
     container.createDiv('todo-item-view-items', (el) => {
       this.renderItems(el);
     });
+=======
+    this.render();
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
     this.render();
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
@@ -235,6 +260,7 @@ export class TodoItemView extends ItemView {
   }
 
   private renderSearch(container: HTMLDivElement) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -291,6 +317,8 @@ export class TodoItemView extends ItemView {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
     container.createEl('table',{},(el) => {
       el.addClass('todo-filter-wrapper');
       el.createEl('tr', {}, (el) => {
@@ -313,6 +341,9 @@ export class TodoItemView extends ItemView {
         });
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
@@ -335,6 +366,7 @@ export class TodoItemView extends ItemView {
       this.setViewState(newState);
     };
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -388,6 +420,8 @@ export class TodoItemView extends ItemView {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
     container.createDiv(`todo-item-view-toolbar-item${activeClass(TodoItemViewPane.Inbox)}`, (el) => {
       el.appendChild(RenderIcon(Icon.Inbox, 'Inbox: No date set, no stakeholder action set, not a someday / maybe item.'));
       el.onClickEvent(() => setActivePane(TodoItemViewPane.Inbox));
@@ -426,6 +460,9 @@ export class TodoItemView extends ItemView {
     todosToRender
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
@@ -465,6 +502,7 @@ export class TodoItemView extends ItemView {
       });
   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -532,6 +570,8 @@ export class TodoItemView extends ItemView {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
   private filterForState(value: TodoItem, _index: number, _array: TodoItem[]): boolean {
     const isPersonMatch = value.person.match(this.filterRegexp) != null; 
     const isProjectMatch = value.project.match(this.filterRegexp) != null;   
@@ -541,6 +581,9 @@ export class TodoItemView extends ItemView {
     if (!isFilterSet || isPersonMatch || isProjectMatch) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
@@ -585,7 +628,10 @@ export class TodoItemView extends ItemView {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
@@ -624,6 +670,9 @@ export class TodoItemView extends ItemView {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)

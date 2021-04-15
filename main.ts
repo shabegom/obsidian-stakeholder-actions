@@ -22,7 +22,10 @@ export default class ActionTrackerPlugin extends Plugin {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       miscRegexp:    new RegExp (this.getSettingValue('miscRegexpString')),
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
@@ -58,6 +61,7 @@ export default class ActionTrackerPlugin extends Plugin {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         isInboxVisible:       this.getSettingValue('isInboxVisible'),
         isAgingVisible:       this.getSettingValue('isAgingVisible'),
         isTodayVisible:       this.getSettingValue('isTodayVisible'),
@@ -70,6 +74,8 @@ export default class ActionTrackerPlugin extends Plugin {
         scheduledTooltip:     this.getSettingValue('scheduledTooltip'),
         stakeholderTooltip:   this.getSettingValue('stakeholderTooltip'),
         somedayTooltip:       this.getSettingValue('somedayTooltip'),
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
@@ -125,7 +131,11 @@ export default class ActionTrackerPlugin extends Plugin {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	async saveFilterSettings() {
+=======
+	async saveSettings() {
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 	async saveSettings() {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
@@ -139,6 +149,7 @@ export default class ActionTrackerPlugin extends Plugin {
     await this.todoIndex.reloadIndex(this.getTodoItemIndexProps());
 	}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -163,6 +174,8 @@ export default class ActionTrackerPlugin extends Plugin {
     });
   }
 
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======

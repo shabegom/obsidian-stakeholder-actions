@@ -3,12 +3,15 @@ div.todo-item-view-container {
 
 input.todo-filter-input {
     width: 100%;
+<<<<<<< HEAD
 }
 
 <<<<<<< HEAD
 button.todo-filter-button {
     white-space: nowrap;
     margin: 0;
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 }
 
 
@@ -49,6 +52,9 @@ hr.todo-item-view-divider {
     margin:0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
@@ -73,11 +79,14 @@ div.todo-item-view-toolbar-item {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 div.todo-item-view-sort {
     padding-left: 8px;
     cursor: pointer;
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
@@ -122,7 +131,11 @@ div.todo-item-view-item-link {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 div.todo-item-view-item-link svg, div.todo-item-view-toolbar-item, div.todo-item-view-sort svg {
+=======
+div.todo-item-view-item-link svg, div.todo-item-view-toolbar-item svg {
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 div.todo-item-view-item-link svg, div.todo-item-view-toolbar-item svg {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
@@ -139,6 +152,7 @@ div.todo-item-view-toolbar-item.active svg {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     fill: var(--interactive-accent);
 }
 
@@ -148,6 +162,9 @@ div.todo-item-view-sort.none svg {
 
 div.todo-item-view-sort.active svg {
     stroke: var(--interactive-accent);
+=======
+    fill: #7f6df2;
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
     fill: #7f6df2;
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)

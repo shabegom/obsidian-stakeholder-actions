@@ -8,7 +8,10 @@ const props = {
 <<<<<<< HEAD:model/TodoParser.test.ts
 <<<<<<< HEAD:model/TodoParser.test.ts
 <<<<<<< HEAD:model/TodoParser.test.ts
+<<<<<<< HEAD:model/TodoParser.test.ts
   miscRegexp:          new RegExp('(.*)'),
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoParser.test.ts
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoParser.test.ts
 =======

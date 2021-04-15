@@ -8,6 +8,7 @@ export interface ActionTrackerSettings {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   miscRegexpString:          string,
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
@@ -17,10 +18,13 @@ export interface ActionTrackerSettings {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of c4e0ae4 (start settings type cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
   dateRegexpString:          string,
   discussWithRegexpString:   string,
   waitingForRegexpString:    string,
   promisedToRegexpString:    string,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -50,11 +54,15 @@ export interface ActionTrackerSettings {
 =======
   somedayMaybeRegexpString:  string
 >>>>>>> parent of c4e0ae4 (start settings type cleanup)
+=======
+  somedayMaybeRegexpString:  string
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 }
 
 export const DEFAULT_SETTINGS: ActionTrackerSettings = {
 	personRegexpString:        '\\[{2}People\\/(.*?)\\]{2}',
   projectRegexpString:       '\\[{2}Projects\\/(.*?)\\]{2}',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -68,10 +76,13 @@ export const DEFAULT_SETTINGS: ActionTrackerSettings = {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of c4e0ae4 (start settings type cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
   dateRegexpString:          '#(\\d{4})\\/(\\d{2})\\/(\\d{2})',
   discussWithRegexpString:   '#(discussWith)',
   waitingForRegexpString:    '#(waitingFor)',
   promisedToRegexpString:    '#(promisedTo)',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -101,11 +112,17 @@ export const DEFAULT_SETTINGS: ActionTrackerSettings = {
 =======
   somedayMaybeRegexpString:  '#(someday)'
 >>>>>>> parent of c4e0ae4 (start settings type cleanup)
+=======
+  somedayMaybeRegexpString:  '#(someday)'
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 }
 
 export class ActionTrackerSettingTab extends PluginSettingTab {
 	plugin: ActionTrackerPlugin;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 
 	constructor(app: App, plugin: ActionTrackerPlugin) {
 		super(app, plugin);
@@ -117,6 +134,7 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 
 		this.containerEl.empty();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -141,12 +159,17 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 		this.containerEl.createEl('h2', {text: 'Settings for the stakeholder action tracker plugin'});
 
 		new Setting(containerEl)
 			.setName('Person regexp pattern')
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
@@ -158,6 +181,7 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
         .setValue(this.plugin.settings.personRegexpString)
 				.onChange(async (value) => {
 					this.plugin.settings.personRegexpString = value;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -194,11 +218,14 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 				.onChange(async (value) => {
 					this.plugin.settings.personRegexpString = value;
 >>>>>>> parent of c4e0ae4 (start settings type cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 					await this.plugin.saveSettings();
 				}));
 
     new Setting(containerEl)
       .setName('Project regexp pattern')
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -209,12 +236,15 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of c4e0ae4 (start settings type cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       .setDesc('This is the regular expression to identify the project in the action. Used for filtering todos by project name.')
       .addText(text => text
         .setPlaceholder('\\[{2}Projects\\/(.*?)\\]{2}')
         .setValue(this.plugin.settings.projectRegexpString)
         .onChange(async (value) => {
           this.plugin.settings.projectRegexpString = value;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -251,12 +281,15 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of c4e0ae4 (start settings type cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
           await this.plugin.saveSettings();
         }));
   
     new Setting(containerEl)
         .setName('Date regexp pattern')
         .setDesc('This is the regular expression to get the date for an action. The RegExp needs to capture 3 values. The first one should be the year (yyyy), the sceond the month (mm), the third the day (dd).')
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -267,11 +300,14 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of c4e0ae4 (start settings type cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
         .addText(text => text
           .setPlaceholder('#(\\d{4})\\/(\\d{2})\\/(\\d{2})')
           .setValue(this.plugin.settings.dateRegexpString)
           .onChange(async (value) => {
             this.plugin.settings.dateRegexpString = value;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -305,11 +341,20 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+            await this.plugin.saveSettings();
+        }));
+  
+    new Setting(containerEl)
+			.setName('Discuss With regexp pattern')
+			.setDesc('This is the regexp pattern you use to mark topics you want to discuss with someone. "Discuss with", "Promised to", and "Waiting for" actions show up under the Stakeholder Actions tab.')
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 			.addText(text => text
 				.setPlaceholder('#(discussWith)')
         .setValue(this.plugin.settings.discussWithRegexpString)
 				.onChange(async (value) => {
 					this.plugin.settings.discussWithRegexpString = value;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -334,12 +379,15 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 				.onChange(async (value) => {
 					this.plugin.settings.discussWithRegexpString = value;
 >>>>>>> parent of c4e0ae4 (start settings type cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 					await this.plugin.saveSettings();
 				}));
 
     new Setting(containerEl)
       .setName('Waiting For regexp pattern')
       .setDesc('This is the regexp pattern you use to mark topics someone has promised to deliver to me. "Discuss with", "Promised to", and "Waiting for" actions show up under the Stakeholder Actions tab.')
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -350,11 +398,14 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of c4e0ae4 (start settings type cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       .addText(text => text
         .setPlaceholder('#(waitingFor)')
         .setValue(this.plugin.settings.waitingForRegexpString)
         .onChange(async (value) => {
           this.plugin.settings.waitingForRegexpString = value;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -372,12 +423,15 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of c4e0ae4 (start settings type cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
           await this.plugin.saveSettings();
         }));        
     
     new Setting(containerEl)
       .setName('Promised To regexp pattern')
       .setDesc('This is the regexp pattern you use to mark topics someone has promised to deliver to me. "Discuss with", "Promised to", and "Waiting for" actions show up under the Stakeholder Actions tab.')
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -388,11 +442,14 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of c4e0ae4 (start settings type cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       .addText(text => text
         .setPlaceholder('#(promisedTo)')
         .setValue(this.plugin.settings.promisedToRegexpString)
         .onChange(async (value) => {
           this.plugin.settings.promisedToRegexpString = value;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -416,12 +473,15 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
           await this.plugin.saveSettings();
         }));        
 
     new Setting(containerEl)
       .setName('Someday Maybe regexp pattern')
       .setDesc('This is the regexp pattern you use to mark actions deliberately without a deadline - i.e. bucket list. Actions without a valid tag and without a deadline will show up in the Inbox.')
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
@@ -432,11 +492,14 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 =======
       .setDesc('This is the regexp pattern you use to mark actions deliberately without a deadline - i.e. bucket list. Actions without a valid tag and without a deadline will show up in the Inbox.')
 >>>>>>> parent of c4e0ae4 (start settings type cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       .addText(text => text
         .setPlaceholder('#(someday)')
         .setValue(this.plugin.settings.somedayMaybeRegexpString)
         .onChange(async (value) => {
           this.plugin.settings.somedayMaybeRegexpString = value;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -599,5 +662,10 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
         }));        
   
 >>>>>>> parent of c4e0ae4 (start settings type cleanup)
+=======
+          await this.plugin.saveSettings();
+        }));        
+  
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 	}
 }
