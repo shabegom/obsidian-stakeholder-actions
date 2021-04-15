@@ -1,10 +1,34 @@
 import { TodoItemStatus } from './TodoItem';
 import { TodoParser } from './TodoParser';
+<<<<<<< HEAD
+<<<<<<< HEAD
 import { TodoItemIndexProps} from '../model/TodoIndex'
+=======
+import { TodoItemIndexProps } from '../model/TodoIndex';
+>>>>>>> parent of 8527fd2 (ts error cleanup and linting)
+=======
+import { TodoItemIndexProps} from '../model/TodoIndex'
+>>>>>>> parent of e1aeddb (lint fix)
 
 const props = {
   personRegexp:        new RegExp('\\[{2}(People\\/*.)\\]{2}'),
   projectRegexp:       new RegExp('\\[{2}(Projects\\/*.)\\]{2}'),
+<<<<<<< HEAD
+<<<<<<< HEAD:model/TodoParser.test.ts
+<<<<<<< HEAD:model/TodoParser.test.ts
+<<<<<<< HEAD:model/TodoParser.test.ts
+<<<<<<< HEAD:model/TodoParser.test.ts
+  miscRegexp:          new RegExp('(.*)'),
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoParser.test.ts
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoParser.test.ts
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoParser.test.ts
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoParser.test.ts
+=======
+>>>>>>> parent of e1aeddb (lint fix)
   dateRegexp:          new RegExp('#(\\d{4}\\/\\d{2}\\/\\d{2})'),
   discussWithRegexp:   new RegExp('#(discussWith)'),
   waitingForRegexp:    new RegExp('#(waitingFor)'),
