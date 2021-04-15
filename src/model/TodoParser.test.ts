@@ -1,0 +1,90 @@
+import { TodoItemStatus } from './TodoItem';
+import { TodoParser } from './TodoParser';
+<<<<<<< HEAD
+<<<<<<< HEAD
+import { TodoItemIndexProps} from '../model/TodoIndex'
+=======
+import { TodoItemIndexProps } from '../model/TodoIndex';
+>>>>>>> parent of 8527fd2 (ts error cleanup and linting)
+=======
+import { TodoItemIndexProps} from '../model/TodoIndex'
+>>>>>>> parent of e1aeddb (lint fix)
+
+const props = {
+  personRegexp:        new RegExp('\\[{2}(People\\/*.)\\]{2}'),
+  projectRegexp:       new RegExp('\\[{2}(Projects\\/*.)\\]{2}'),
+<<<<<<< HEAD
+<<<<<<< HEAD:model/TodoParser.test.ts
+<<<<<<< HEAD:model/TodoParser.test.ts
+<<<<<<< HEAD:model/TodoParser.test.ts
+<<<<<<< HEAD:model/TodoParser.test.ts
+  miscRegexp:          new RegExp('(.*)'),
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoParser.test.ts
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoParser.test.ts
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoParser.test.ts
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoParser.test.ts
+=======
+>>>>>>> parent of e1aeddb (lint fix)
+  dateRegexp:          new RegExp('#(\\d{4}\\/\\d{2}\\/\\d{2})'),
+  discussWithRegexp:   new RegExp('#(discussWith)'),
+  waitingForRegexp:    new RegExp('#(waitingFor)'),
+  promisedToRegexp:    new RegExp('#(promisedTo)'),
+  somedayMaybeRegexp:  new RegExp('#(someday)')
+}
+const todoParser = new TodoParser(props);
+
+test('parsing an outstanding todo', async () => {
+  const contents = `- [ ] This is something that needs doing`;
+  const todos = await todoParser.parseTasks('/', contents);
+  const todo = todos[0];
+  expect(todo.startIndex).toEqual(2);
+  expect(todo.length).toEqual(38);
+  expect(todo.sourceFilePath).toEqual('/');
+  expect(todo.status).toEqual(TodoItemStatus.Todo);
+  expect(todo.description).toEqual('This is something that needs doing');
+  expect(todo.actionDate).toBeUndefined();
+  expect(todo.isSomedayMaybeNote).toEqual(false);
+});
+
+test('parsing a completed todo', async () => {
+  const contents = `- [x] This is something that has been completed`;
+  const todos = await todoParser.parseTasks('/', contents);
+  const todo = todos[0];
+  expect(todo.startIndex).toEqual(2);
+  expect(todo.length).toEqual(45);
+  expect(todo.sourceFilePath).toEqual('/');
+  expect(todo.status).toEqual(TodoItemStatus.Done);
+  expect(todo.description).toEqual('This is something that has been completed');
+  expect(todo.actionDate).toBeUndefined();
+  expect(todo.isSomedayMaybeNote).toEqual(false);
+});
+
+test('parsing an outstanding todo with a specific action date', async () => {
+  const contents = `- [ ] This is something that needs doing #2021/02/16`;
+  const todos = await todoParser.parseTasks('/', contents);
+  const todo = todos[0];
+  expect(todo.startIndex).toEqual(2);
+  expect(todo.length).toEqual(50);
+  expect(todo.sourceFilePath).toEqual('/');
+  expect(todo.status).toEqual(TodoItemStatus.Todo);
+  expect(todo.description).toEqual('This is something that needs doing #2021/02/16');
+  expect(todo.actionDate).toEqual(new Date('2021-02-16'));
+  expect(todo.isSomedayMaybeNote).toEqual(false);
+});
+
+test('parsing an outstanding someday/maybe todo', async () => {
+  const contents = `- [ ] This is something that needs doing #someday`;
+  const todos = await todoParser.parseTasks('/', contents);
+  const todo = todos[0];
+  expect(todo.startIndex).toEqual(2);
+  expect(todo.length).toEqual(47);
+  expect(todo.sourceFilePath).toEqual('/');
+  expect(todo.status).toEqual(TodoItemStatus.Todo);
+  expect(todo.description).toEqual('This is something that needs doing #someday');
+  expect(todo.actionDate).toBeUndefined();
+  expect(todo.isSomedayMaybeNote).toEqual(true);
+});
