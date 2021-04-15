@@ -19,18 +19,22 @@ export class TodoIndex {
   private listeners: ((todos: TodoItem[]) => void)[];
   private props: TodoItemIndexProps;
 
-  constructor(vault: Vault, listener: (todos: TodoItem[]) => void, props: TodoItemIndexProps) {
+  constructor(
+    vault: Vault,
+    listener: (todos: TodoItem[]) => void,
+    props: TodoItemIndexProps,
+  ) {
     this.props = props;
     this.vault = vault;
     this.todos = new Map<string, TodoItem[]>();
     this.listeners = [listener];
   }
 
-  async reloadIndex(props: TodoItemIndexProps) {
+  async reloadIndex(props: TodoItemIndexProps): Promise<void> {
     this.props = props;
     await this.initialize();
   }
-  
+
   async initialize(): Promise<void> {
     // TODO: persist index & last sync timestamp; only parse files that changed since then.
     const todoMap = new Map<string, TodoItem[]>();
@@ -48,9 +52,9 @@ export class TodoIndex {
 
     const totalTimeMs = new Date().getTime() - timeStart;
     console.log(
-      `[obsidian-stakeholder_action-plugin] Parsed ${numberOfTodos} TODOs from ${markdownFiles.length} markdown files in (${
-        totalTimeMs / 1000.0
-      }s)`,
+      `[obsidian-stakeholder_action-plugin] Parsed ${numberOfTodos} TODOs from ${
+        markdownFiles.length
+      } markdown files in (${totalTimeMs / 1000.0}s)`,
     );
     this.todos = todoMap;
     this.registerEventHandlers();
@@ -61,8 +65,13 @@ export class TodoIndex {
     const file = this.vault.getAbstractFileByPath(todo.sourceFilePath) as TFile;
     const fileContents = this.vault.read(file);
     fileContents.then((c: string) => {
-      const newTodo = `[${newStatus === TodoItemStatus.Done ? 'x' : ' '}] ${todo.description}`;
-      const newContents = c.substring(0, todo.startIndex) + newTodo + c.substring(todo.startIndex + todo.length);
+      const newTodo = `[${newStatus === TodoItemStatus.Done ? 'x' : ' '}] ${
+        todo.description
+      }`;
+      const newContents =
+        c.substring(0, todo.startIndex) +
+        newTodo +
+        c.substring(todo.startIndex + todo.length);
       this.vault.modify(file, newContents);
     });
   }
@@ -75,7 +84,7 @@ export class TodoIndex {
   }
 
   private indexFile(file: TFile) {
-    this.parseTodosInFile(file).then((todos) => {
+    this.parseTodosInFile(file).then(todos => {
       this.todos.set(file.path, todos);
       this.invokeListeners();
     });
@@ -88,7 +97,9 @@ export class TodoIndex {
     }
   }
 
-  public setProps(setter: (currentProps: TodoItemIndexProps) => TodoItemIndexProps): void {
+  public setProps(
+    setter: (currentProps: TodoItemIndexProps) => TodoItemIndexProps,
+  ): void {
     this.props = setter(this.props);
     //do I need to do anything else??
   }
@@ -99,7 +110,7 @@ export class TodoIndex {
     const fileContents = await this.vault.cachedRead(file);
     return todoParser
       .parseTasks(file.path, fileContents)
-      .then((todos) => todos.filter((todo) => todo.status === TodoItemStatus.Todo));
+      .then(todos => todos.filter(todo => todo.status === TodoItemStatus.Todo));
   }
 
   private registerEventHandlers() {
@@ -121,6 +132,6 @@ export class TodoIndex {
 
   private invokeListeners() {
     const todos = ([] as TodoItem[]).concat(...Array.from(this.todos.values()));
-    this.listeners.forEach((listener) => listener(todos));
+    this.listeners.forEach(listener => listener(todos));
   }
 }
