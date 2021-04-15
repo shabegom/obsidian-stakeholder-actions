@@ -5,6 +5,7 @@ import { TodoParser } from '../model/TodoParser';
 export interface TodoItemIndexProps {
   personRegexp:       RegExp;
   projectRegexp:      RegExp;
+<<<<<<< HEAD
 <<<<<<< HEAD:model/TodoIndex.ts
 <<<<<<< HEAD:model/TodoIndex.ts
 <<<<<<< HEAD:model/TodoIndex.ts
@@ -18,6 +19,8 @@ export interface TodoItemIndexProps {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoIndex.ts
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoIndex.ts
+=======
+>>>>>>> parent of e1aeddb (lint fix)
   dateRegexp:         RegExp;
   discussWithRegexp:  RegExp;
   waitingForRegexp:   RegExp;
