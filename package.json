@@ -42,5 +42,11 @@
     "*.{js,ts,ts}": [
       "eslint --fix"
     ]
+<<<<<<< HEAD
+=======
+  },
+  "dependencies": {
+    "obisidian": "^0.0.4"
+>>>>>>> parent of 0c0ed26 (update obisidian package and allow no parens in arrow funcs)
   }
 }
