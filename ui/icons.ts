@@ -9,11 +9,7 @@ export enum Icon {
   Sort,
 }
 
-export const RenderIcon = (
-  icon: Icon,
-  title = '',
-  description = '',
-): HTMLElement => {
+export const RenderIcon = (icon: Icon, title = '', description = ''): HTMLElement => {
   const svg = svgForIcon(icon)(title, description);
   return parser.parseFromString(svg, 'text/xml').documentElement;
 };
@@ -42,9 +38,7 @@ const svgForIcon = (icon: Icon): ((arg0: string, arg1: string) => string) => {
 };
 
 const inboxIcon = (title: string, description: string): string => `
-<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" aria-label="${
-  title + description
-}">
+<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" aria-label="${title + description}">
   <title>${title}</title>
   <description>${description}</description>
   <path d="M0 0h24v24H0V0z" fill="none"/>
@@ -63,9 +57,7 @@ const revealIcon = (title: string, description: string): string => `
 `;
 
 const scheduledIcon = (title: string, description: string): string => `
-<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" aria-label="${
-  title + description
-}">
+<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" aria-label="${title + description}">
   <title>${title}</title>
   <description>${description}</description>
   <path d="M0 0h24v24H0V0z" fill="none"/>
@@ -85,9 +77,7 @@ const somedayIcon = (title: string, description: string): string => `
 `;
 
 const todayIcon = (title: string, description: string): string => `
-<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" aria-label="${
-  title + description
-}">
+<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" aria-label="${title + description}">
   <title>${title}</title>
   <description>${description}</description>
   <path d="M0 0h24v24H0V0z" fill="none"/>
@@ -96,9 +86,7 @@ const todayIcon = (title: string, description: string): string => `
 `;
 
 const stakeholderIcon = (title: string, description: string): string => `
-<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 16 24" width="16" height="24" viewBox="0 0 16 24" aria-label="${
-  title + description
-}">
+<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 16 24" width="16" height="24" viewBox="0 0 16 24" aria-label="${title + description}">
   <title>${title}</title>
   <description>${description}</description>
   <path d="M0 0h24v16H0V0z" fill="none"/>
@@ -108,9 +96,7 @@ const stakeholderIcon = (title: string, description: string): string => `
 `;
 
 const agingIcon = (title: string, description: string): string => `
-<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" aria-label="${
-  title + description
-}">
+<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" aria-label="${title + description}">
   <title>${title}</title>
   <description>${description}</description>
   <g id="surface1">
