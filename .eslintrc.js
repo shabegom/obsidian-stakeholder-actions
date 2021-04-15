@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -14,6 +15,8 @@ module.exports = {
   rules: {},
 };
 =======
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 module.exports = {
@@ -41,6 +44,10 @@ module.exports = {
     "rules": {
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+};
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
 };
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
