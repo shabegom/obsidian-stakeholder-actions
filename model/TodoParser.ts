@@ -1,5 +1,9 @@
 import { TodoItem, TodoItemStatus } from '../model/TodoItem';
+<<<<<<< HEAD
 import { TodoItemIndexProps} from '../model/TodoIndex'
+=======
+import { TodoItemIndexProps } from '../model/TodoIndex';
+>>>>>>> parent of 8527fd2 (ts error cleanup and linting)
 
 export class TodoParser {
   props: TodoItemIndexProps;
@@ -22,8 +26,16 @@ export class TodoParser {
     const dateMatches = description.match(this.props.dateRegexp);
     let actionDate = undefined;
     if (dateMatches != null) {
+<<<<<<< HEAD
       actionDate = dateMatches.length > 3 ? new Date(parseInt(dateMatches[1]), parseInt(dateMatches[2])-1,parseInt(dateMatches[3]),0, 0, 0, 0) : undefined;
     }  
+=======
+      actionDate =
+        dateMatches.length > 3
+          ? new Date(parseInt(dateMatches[1]), parseInt(dateMatches[2]) - 1, parseInt(dateMatches[3]), 0, 0, 0, 0)
+          : undefined;
+    }
+>>>>>>> parent of 8527fd2 (ts error cleanup and linting)
     const personMatches = description.match(this.props.personRegexp);
     const person = personMatches != null ? personMatches[1] : "";
 

@@ -16,6 +16,7 @@ module.exports = {
   },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of af7b7cd (Merge pull request #20 from shabegom/add-eslint)
   extends: [
@@ -73,13 +74,14 @@ module.exports = {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
   plugins: ['prettier'],
+=======
+>>>>>>> parent of 8527fd2 (ts error cleanup and linting)
   extends: [
     'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
     'plugin:prettier/recommended', // Should be last
   ],
-  rules: {
-    'prettier/prettier': 'error',
-  },
+  rules: {},
 };
 >>>>>>> parent of 3223152 (Merge branch 'main' into typing-cleanup)
 =======

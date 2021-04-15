@@ -1,6 +1,10 @@
 import { TodoItemStatus } from './TodoItem';
 import { TodoParser } from './TodoParser';
+<<<<<<< HEAD
 import { TodoItemIndexProps} from '../model/TodoIndex'
+=======
+import { TodoItemIndexProps } from '../model/TodoIndex';
+>>>>>>> parent of 8527fd2 (ts error cleanup and linting)
 
 const props = {
   personRegexp:        new RegExp('\\[{2}(People\\/*.)\\]{2}'),
