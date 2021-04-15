@@ -4,6 +4,7 @@ div.todo-item-view-container {
 input.todo-filter-input {
     width: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 <<<<<<< HEAD
@@ -12,6 +13,8 @@ button.todo-filter-button {
     margin: 0;
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 0241ab0 (comment out unused rulesets)
 }
 
 
@@ -53,6 +56,7 @@ hr.todo-item-view-divider {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
@@ -60,6 +64,8 @@ hr.todo-item-view-divider {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 0241ab0 (comment out unused rulesets)
 }
 
 div.todo-item-view-toolbar {
@@ -80,6 +86,7 @@ div.todo-item-view-toolbar-item {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 div.todo-item-view-sort {
@@ -93,6 +100,8 @@ div.todo-item-view-sort {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 0241ab0 (comment out unused rulesets)
 }
 
 div.todo-item-view-items {
@@ -132,6 +141,7 @@ div.todo-item-view-item-link {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 div.todo-item-view-item-link svg, div.todo-item-view-toolbar-item, div.todo-item-view-sort svg {
 =======
 div.todo-item-view-item-link svg, div.todo-item-view-toolbar-item svg {
@@ -145,10 +155,14 @@ div.todo-item-view-item-link svg, div.todo-item-view-toolbar-item svg {
 =======
 div.todo-item-view-item-link svg, div.todo-item-view-toolbar-item svg {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+div.todo-item-view-item-link svg, div.todo-item-view-toolbar-item svg {
+>>>>>>> parent of 0241ab0 (comment out unused rulesets)
     fill: #cccccc;
 }
 
 div.todo-item-view-toolbar-item.active svg {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -174,4 +188,7 @@ div.todo-item-view-sort.active svg {
 =======
     fill: #7f6df2;
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+    fill: #7f6df2;
+>>>>>>> parent of 0241ab0 (comment out unused rulesets)
 }
