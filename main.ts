@@ -1,10 +1,14 @@
-import { App, Plugin, PluginManifest, TFile, WorkspaceLeaf, } from 'obsidian';
-import { VIEW_TYPE_TODO } from './constants';
-import { TodoItemView, TodoItemViewProps } from './ui/TodoItemView';
-import { TodoItem, TodoItemStatus } from './model/TodoItem';
-import { TodoIndex,TodoItemIndexProps } from './model/TodoIndex';
-import {DEFAULT_SETTINGS, ActionTrackerSettings, ActionTrackerSettingTab} from './settings';
+import { App, Plugin, PluginManifest, TFile, WorkspaceLeaf } from 'obsidian';
 
+import { VIEW_TYPE_TODO } from './constants';
+import { TodoIndex, TodoItemIndexProps } from './model/TodoIndex';
+import { TodoItem, TodoItemStatus } from './model/TodoItem';
+import {
+  ActionTrackerSettings,
+  ActionTrackerSettingTab,
+  DEFAULT_SETTINGS,
+} from './settings';
+import { TodoItemView, TodoItemViewProps } from './ui/TodoItemView';
 
 export default class ActionTrackerPlugin extends Plugin {
   private todoIndex: TodoIndex;
@@ -15,37 +19,36 @@ export default class ActionTrackerPlugin extends Plugin {
     super(app, manifest);
   }
 
-  private getTodoItemIndexProps() : TodoItemIndexProps {
+  private getTodoItemIndexProps(): TodoItemIndexProps {
     return {
-      personRegexp: new RegExp (this.getSettingValue('personRegexpString')),
-      projectRegexp: new RegExp (this.getSettingValue('projectRegexpString')),
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      miscRegexp:    new RegExp (this.getSettingValue('miscRegexpString')),
-=======
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
-=======
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
-=======
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
-=======
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
-      dateRegexp: new RegExp (this.getSettingValue('dateRegexpString')),
-      discussWithRegexp: new RegExp (this.getSettingValue('discussWithRegexpString')),
-      waitingForRegexp: new RegExp (this.getSettingValue('waitingForRegexpString')),
-      promisedToRegexp: new RegExp (this.getSettingValue('promisedToRegexpString')),
-      somedayMaybeRegexp: new RegExp (this.getSettingValue('somedayMaybeRegexpString')),
+      personRegexp: new RegExp(this.getSettingValue('personRegexpString')),
+      projectRegexp: new RegExp(this.getSettingValue('projectRegexpString')),
+      dateRegexp: new RegExp(this.getSettingValue('dateRegexpString')),
+      discussWithRegexp: new RegExp(
+        this.getSettingValue('discussWithRegexpString'),
+      ),
+      waitingForRegexp: new RegExp(
+        this.getSettingValue('waitingForRegexpString'),
+      ),
+      promisedToRegexp: new RegExp(
+        this.getSettingValue('promisedToRegexpString'),
+      ),
+      somedayMaybeRegexp: new RegExp(
+        this.getSettingValue('somedayMaybeRegexpString'),
+      ),
     };
   }
 
   async onload(): Promise<void> {
     console.log('loading plugin');
-    
+
     await this.loadSettings();
-    
-    this.todoIndex = new TodoIndex(this.app.vault, this.tick.bind(this),this.getTodoItemIndexProps());
+
+    this.todoIndex = new TodoIndex(
+      this.app.vault,
+      this.tick.bind(this),
+      this.getTodoItemIndexProps(),
+    );
 
     this.registerView(VIEW_TYPE_TODO, (leaf: WorkspaceLeaf) => {
       const todos: TodoItem[] = [];
@@ -58,30 +61,6 @@ export default class ActionTrackerPlugin extends Plugin {
         toggleTodo: (todo: TodoItem, newStatus: TodoItemStatus) => {
           this.todoIndex.setStatus(todo, newStatus);
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        isInboxVisible:       this.getSettingValue('isInboxVisible'),
-        isAgingVisible:       this.getSettingValue('isAgingVisible'),
-        isTodayVisible:       this.getSettingValue('isTodayVisible'),
-        isScheduledVisible:   this.getSettingValue('isScheduledVisible'),
-        isStakeholderVisible: this.getSettingValue('isStakeholderVisible'),
-        isSomedayVisible:     this.getSettingValue('isSomedayVisible'),
-        inboxTooltip:         this.getSettingValue('inboxTooltip'),
-        agingTooltip:         this.getSettingValue('agingTooltip'),
-        todayTooltip:         this.getSettingValue('todayTooltip'),
-        scheduledTooltip:     this.getSettingValue('scheduledTooltip'),
-        stakeholderTooltip:   this.getSettingValue('stakeholderTooltip'),
-        somedayTooltip:       this.getSettingValue('somedayTooltip'),
-=======
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
-=======
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
-=======
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
-=======
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       };
       this.view = new TodoItemView(leaf, props);
       return this.view;
@@ -93,13 +72,22 @@ export default class ActionTrackerPlugin extends Plugin {
       this.initLeaf();
       await this.prepareIndex();
     } else {
-      this.registerEvent(this.app.workspace.on('layout-ready', this.initLeaf.bind(this)));
-      this.registerEvent(this.app.workspace.on('layout-ready', async () => await this.prepareIndex()));
+      this.registerEvent(
+        this.app.workspace.on('layout-ready', this.initLeaf.bind(this)),
+      );
+      this.registerEvent(
+        this.app.workspace.on(
+          'layout-ready',
+          async () => await this.prepareIndex(),
+        ),
+      );
     }
   }
 
   onunload(): void {
-    this.app.workspace.getLeavesOfType(VIEW_TYPE_TODO).forEach((leaf) => leaf.detach());
+    this.app.workspace
+      .getLeavesOfType(VIEW_TYPE_TODO)
+      .forEach(leaf => leaf.detach());
   }
 
   initLeaf(): void {
@@ -124,67 +112,18 @@ export default class ActionTrackerPlugin extends Plugin {
     });
   }
 
-  async loadSettings() {
-		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
-	}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-	async saveFilterSettings() {
-=======
-	async saveSettings() {
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
-=======
-	async saveSettings() {
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
-=======
-	async saveSettings() {
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
-=======
-	async saveSettings() {
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
-		await this.saveData(this.settings);
-    await this.todoIndex.reloadIndex(this.getTodoItemIndexProps());
-	}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  async saveViewDisplaySettings() {
-		await this.saveData(this.settings);
-    this.view.setDisplayProps({
-      todos: null,
-      openFile: null,
-      toggleTodo: null,
-      isInboxVisible:       this.getSettingValue('isInboxVisible'),
-      isAgingVisible:       this.getSettingValue('isAgingVisible'),
-      isTodayVisible:       this.getSettingValue('isTodayVisible'),
-      isScheduledVisible:   this.getSettingValue('isScheduledVisible'),
-      isStakeholderVisible: this.getSettingValue('isStakeholderVisible'),
-      isSomedayVisible:     this.getSettingValue('isSomedayVisible'),
-      inboxTooltip:         this.getSettingValue('inboxTooltip'),
-      agingTooltip:         this.getSettingValue('agingTooltip'),
-      todayTooltip:         this.getSettingValue('todayTooltip'),
-      scheduledTooltip:     this.getSettingValue('scheduledTooltip'),
-      stakeholderTooltip:   this.getSettingValue('stakeholderTooltip'),
-      somedayTooltip:       this.getSettingValue('somedayTooltip'),
-    });
+  async loadSettings(): Promise<void> {
+    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
   }
 
-=======
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
-=======
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
-=======
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
-=======
->>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
-  getSettingValue<K extends keyof ActionTrackerSettings>(setting: K): ActionTrackerSettings[K] {
-    return this.settings[setting]
+  async saveSettings(): Promise<void> {
+    await this.saveData(this.settings);
+    await this.todoIndex.reloadIndex(this.getTodoItemIndexProps());
+  }
+
+  getSettingValue<K extends keyof ActionTrackerSettings>(
+    setting: K,
+  ): ActionTrackerSettings[K] {
+    return this.settings[setting];
   }
 }
-
-
