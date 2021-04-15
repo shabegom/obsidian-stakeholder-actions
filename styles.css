@@ -1,90 +1,194 @@
-/* div.todo-item-view-container {
-} */
+div.todo-item-view-container {
+}
 
 input.todo-filter-input {
-  width: 100%;
+    width: 100%;
+<<<<<<< HEAD
+<<<<<<< HEAD
 }
 
+<<<<<<< HEAD
+button.todo-filter-button {
+    white-space: nowrap;
+    margin: 0;
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 0241ab0 (comment out unused rulesets)
+}
+
+
+hr.todo-item-view-divider {
+    margin:0;
+}
+
+div.todo-item-view-search {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+=======
 table.todo-filter-wrapper {
-  width: 100%;
+    width: 100%;   
 }
 
-/* tr.todo-filter-row {
+tr.todo-filter-row {
   
-} */
+}
 
 td.todo-filter-col-input {
-  margin: 0;
-  width: 100%;
+    margin:0;
+    width: 100%;   
 }
 
 td.todo-filter-col-button {
-  width: 1px;
+    width: 1px;   
 }
+
 
 button.todo-filter-button {
-  white-space: nowrap;
-  margin: 0;
+    white-space: nowrap;
+    margin: 0;
 }
 
+
 hr.todo-item-view-divider {
-  margin: 0;
+    margin:0;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 0241ab0 (comment out unused rulesets)
 }
 
 div.todo-item-view-toolbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid #cccccc;
-  border-top: 1px solid #cccccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #cccccc;
+    border-top: 1px solid #cccccc;
 }
 
 div.todo-item-view-toolbar-item {
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 8px;
-  padding-bottom: 2px;
-  cursor: pointer;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 2px;
+    cursor: pointer;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+}
+
+div.todo-item-view-sort {
+    padding-left: 8px;
+    cursor: pointer;
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+>>>>>>> parent of 0241ab0 (comment out unused rulesets)
 }
 
 div.todo-item-view-items {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 div.todo-item-view-item {
-  display: flex;
-  padding-top: 10px;
-  padding-bottom: 10px;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 div.todo-item-view-item p {
-  margin: 0;
+    margin: 0;
 }
 
 div.todo-item-view-item-checkbox {
-  flex-basis: 25px;
-  flex-shrink: 0;
+    flex-basis: 25px;
+    flex-shrink: 0;
 }
 
 div.todo-item-view-item-description {
-  flex-grow: 1;
-  padding-left: 4px;
+    flex-grow: 1;
+    padding-left: 4px;
 }
 
 div.todo-item-view-item-link {
-  flex-basis: 25px;
-  flex-shrink: 0;
-  cursor: pointer;
-  padding-left: 8px;
+    flex-basis: 25px;
+    flex-shrink: 0;
+    cursor: pointer;
+    padding-left: 8px;
 }
 
-div.todo-item-view-item-link svg,
-div.todo-item-view-toolbar-item svg {
-  fill: #cccccc;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+div.todo-item-view-item-link svg, div.todo-item-view-toolbar-item, div.todo-item-view-sort svg {
+=======
+div.todo-item-view-item-link svg, div.todo-item-view-toolbar-item svg {
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+div.todo-item-view-item-link svg, div.todo-item-view-toolbar-item svg {
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+div.todo-item-view-item-link svg, div.todo-item-view-toolbar-item svg {
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+div.todo-item-view-item-link svg, div.todo-item-view-toolbar-item svg {
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+div.todo-item-view-item-link svg, div.todo-item-view-toolbar-item svg {
+>>>>>>> parent of 0241ab0 (comment out unused rulesets)
+    fill: #cccccc;
 }
 
 div.todo-item-view-toolbar-item.active svg {
-  fill: #7f6df2;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    fill: var(--interactive-accent);
+}
+
+div.todo-item-view-sort.none svg {
+    stroke: var(--text-normal);
+}
+
+div.todo-item-view-sort.active svg {
+    stroke: var(--interactive-accent);
+=======
+    fill: #7f6df2;
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+    fill: #7f6df2;
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+    fill: #7f6df2;
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+    fill: #7f6df2;
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+    fill: #7f6df2;
+>>>>>>> parent of 0241ab0 (comment out unused rulesets)
 }
