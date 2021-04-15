@@ -12,5 +12,3 @@ yarn-error.log
 
 # build
 dist/
-dist/main.js
-dist/styles.css
