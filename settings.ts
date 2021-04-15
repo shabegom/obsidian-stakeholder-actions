@@ -5,13 +5,17 @@ export interface ActionTrackerSettings {
 	personRegexpString:        string,
   projectRegexpString:       string,
 <<<<<<< HEAD
+<<<<<<< HEAD
   miscRegexpString:          string,
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
   dateRegexpString:          string,
   discussWithRegexpString:   string,
   waitingForRegexpString:    string,
   promisedToRegexpString:    string,
+<<<<<<< HEAD
 <<<<<<< HEAD
   somedayMaybeRegexpString:  string,
   isInboxVisible:            boolean,
@@ -29,19 +33,26 @@ export interface ActionTrackerSettings {
 =======
   somedayMaybeRegexpString:  string
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
+  somedayMaybeRegexpString:  string
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 }
 
 export const DEFAULT_SETTINGS: ActionTrackerSettings = {
 	personRegexpString:        '\\[{2}People\\/(.*?)\\]{2}',
   projectRegexpString:       '\\[{2}Projects\\/(.*?)\\]{2}',
 <<<<<<< HEAD
+<<<<<<< HEAD
   miscRegexpString:          '',
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
   dateRegexpString:          '#(\\d{4})\\/(\\d{2})\\/(\\d{2})',
   discussWithRegexpString:   '#(discussWith)',
   waitingForRegexpString:    '#(waitingFor)',
   promisedToRegexpString:    '#(promisedTo)',
+<<<<<<< HEAD
 <<<<<<< HEAD
   somedayMaybeRegexpString:  '#(someday)',
   isInboxVisible:            true,
@@ -56,6 +67,9 @@ export const DEFAULT_SETTINGS: ActionTrackerSettings = {
   scheduledTooltip:          'Scheduled for a future date',
   stakeholderTooltip:        'Stakeholder and Project actions: discussWith, promisedTo, waitingFor. Only items that have a valid project or person will show up here. Stakeholder actions without project or person are in the Inbox.',
   somedayTooltip:            'Tagged as Someday / Maybe',
+=======
+  somedayMaybeRegexpString:  '#(someday)'
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
   somedayMaybeRegexpString:  '#(someday)'
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
@@ -75,6 +89,7 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 		this.containerEl.empty();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		this.containerEl.createEl('h1', {text: 'Selectors'});
     this.containerEl.createEl('p', {text: 'Selectors are regular expressions that select specific part of the action. ' +
                                           'These values are used to control what is presented in each view and/or to filter the views.'});
@@ -92,10 +107,15 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 		new Setting(containerEl)
 			.setName('Action Party') 
 =======
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 		this.containerEl.createEl('h2', {text: 'Settings for the stakeholder action tracker plugin'});
 
 		new Setting(containerEl)
 			.setName('Person regexp pattern')
+<<<<<<< HEAD
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 			.setDesc('This is the regular expression to identify the action party in the action. Used for filtering todos by person.')
 			.addText(text => text
@@ -104,17 +124,23 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 				.onChange(async (value) => {
 					this.plugin.settings.personRegexpString = value;
 <<<<<<< HEAD
+<<<<<<< HEAD
 					await this.plugin.saveFilterSettings();
 				}));
 
     new Setting(containerEl)
       .setName('Project')
 =======
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 					await this.plugin.saveSettings();
 				}));
 
     new Setting(containerEl)
       .setName('Project regexp pattern')
+<<<<<<< HEAD
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       .setDesc('This is the regular expression to identify the project in the action. Used for filtering todos by project name.')
       .addText(text => text
@@ -122,6 +148,7 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
         .setValue(this.plugin.settings.projectRegexpString)
         .onChange(async (value) => {
           this.plugin.settings.projectRegexpString = value;
+<<<<<<< HEAD
 <<<<<<< HEAD
           await this.plugin.saveFilterSettings();
         }));
@@ -149,18 +176,24 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
                  'If your RegExp captures a single value, then it must be a valid date format based on your regional settings. For example: ' +
                  '#(\\d{4}\\/\\d{2}\\/\\d{2}) is also valid as it captures a single date as yyyy/mm/dd')
 =======
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
           await this.plugin.saveSettings();
         }));
   
     new Setting(containerEl)
         .setName('Date regexp pattern')
         .setDesc('This is the regular expression to get the date for an action. The RegExp needs to capture 3 values. The first one should be the year (yyyy), the sceond the month (mm), the third the day (dd).')
+<<<<<<< HEAD
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
         .addText(text => text
           .setPlaceholder('#(\\d{4})\\/(\\d{2})\\/(\\d{2})')
           .setValue(this.plugin.settings.dateRegexpString)
           .onChange(async (value) => {
             this.plugin.settings.dateRegexpString = value;
+<<<<<<< HEAD
 <<<<<<< HEAD
             await this.plugin.saveFilterSettings();
         }));
@@ -174,18 +207,24 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
 			.setName('Discuss With tag')
 			.setDesc('This is the regular expression to identify topics you want to discuss with someone.')
 =======
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
             await this.plugin.saveSettings();
         }));
   
     new Setting(containerEl)
 			.setName('Discuss With regexp pattern')
 			.setDesc('This is the regexp pattern you use to mark topics you want to discuss with someone. "Discuss with", "Promised to", and "Waiting for" actions show up under the Stakeholder Actions tab.')
+<<<<<<< HEAD
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 			.addText(text => text
 				.setPlaceholder('#(discussWith)')
         .setValue(this.plugin.settings.discussWithRegexpString)
 				.onChange(async (value) => {
 					this.plugin.settings.discussWithRegexpString = value;
+<<<<<<< HEAD
 <<<<<<< HEAD
 					await this.plugin.saveFilterSettings();
 				}));
@@ -194,18 +233,24 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
       .setName('Waiting For')
       .setDesc('This is the regular expression to identify actions which you are waiting for some to complete.')
 =======
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 					await this.plugin.saveSettings();
 				}));
 
     new Setting(containerEl)
       .setName('Waiting For regexp pattern')
       .setDesc('This is the regexp pattern you use to mark topics someone has promised to deliver to me. "Discuss with", "Promised to", and "Waiting for" actions show up under the Stakeholder Actions tab.')
+<<<<<<< HEAD
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       .addText(text => text
         .setPlaceholder('#(waitingFor)')
         .setValue(this.plugin.settings.waitingForRegexpString)
         .onChange(async (value) => {
           this.plugin.settings.waitingForRegexpString = value;
+<<<<<<< HEAD
 <<<<<<< HEAD
           await this.plugin.saveFilterSettings();
         }));        
@@ -214,18 +259,24 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
       .setName('Promised To')
       .setDesc('This is the regular expression to identify promises you have made to someone.')
 =======
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
           await this.plugin.saveSettings();
         }));        
     
     new Setting(containerEl)
       .setName('Promised To regexp pattern')
       .setDesc('This is the regexp pattern you use to mark topics someone has promised to deliver to me. "Discuss with", "Promised to", and "Waiting for" actions show up under the Stakeholder Actions tab.')
+<<<<<<< HEAD
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       .addText(text => text
         .setPlaceholder('#(promisedTo)')
         .setValue(this.plugin.settings.promisedToRegexpString)
         .onChange(async (value) => {
           this.plugin.settings.promisedToRegexpString = value;
+<<<<<<< HEAD
 <<<<<<< HEAD
           await this.plugin.saveFilterSettings();
         }));        
@@ -238,18 +289,24 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
       .setName('Someday Maybe regexp pattern')
       .setDesc('This is the regexp pattern you use ')
 =======
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
           await this.plugin.saveSettings();
         }));        
 
     new Setting(containerEl)
       .setName('Someday Maybe regexp pattern')
       .setDesc('This is the regexp pattern you use to mark actions deliberately without a deadline - i.e. bucket list. Actions without a valid tag and without a deadline will show up in the Inbox.')
+<<<<<<< HEAD
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
+=======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       .addText(text => text
         .setPlaceholder('#(someday)')
         .setValue(this.plugin.settings.somedayMaybeRegexpString)
         .onChange(async (value) => {
           this.plugin.settings.somedayMaybeRegexpString = value;
+<<<<<<< HEAD
 <<<<<<< HEAD
           await this.plugin.saveFilterSettings();
         }));  
@@ -389,6 +446,11 @@ export class ActionTrackerSettingTab extends PluginSettingTab {
                 });
                 t.inputEl.setAttr("rows", 4);
               });  
+=======
+          await this.plugin.saveSettings();
+        }));        
+  
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
           await this.plugin.saveSettings();
         }));        

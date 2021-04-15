@@ -6,7 +6,10 @@ export interface TodoItemIndexProps {
   personRegexp:       RegExp;
   projectRegexp:      RegExp;
 <<<<<<< HEAD:model/TodoIndex.ts
+<<<<<<< HEAD:model/TodoIndex.ts
   miscRegexp:         RegExp;
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoIndex.ts
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/model/TodoIndex.ts
   dateRegexp:         RegExp;

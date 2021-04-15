@@ -20,7 +20,10 @@ export default class ActionTrackerPlugin extends Plugin {
       personRegexp: new RegExp (this.getSettingValue('personRegexpString')),
       projectRegexp: new RegExp (this.getSettingValue('projectRegexpString')),
 <<<<<<< HEAD
+<<<<<<< HEAD
       miscRegexp:    new RegExp (this.getSettingValue('miscRegexpString')),
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       dateRegexp: new RegExp (this.getSettingValue('dateRegexpString')),
@@ -50,6 +53,7 @@ export default class ActionTrackerPlugin extends Plugin {
           this.todoIndex.setStatus(todo, newStatus);
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         isInboxVisible:       this.getSettingValue('isInboxVisible'),
         isAgingVisible:       this.getSettingValue('isAgingVisible'),
         isTodayVisible:       this.getSettingValue('isTodayVisible'),
@@ -62,6 +66,8 @@ export default class ActionTrackerPlugin extends Plugin {
         scheduledTooltip:     this.getSettingValue('scheduledTooltip'),
         stakeholderTooltip:   this.getSettingValue('stakeholderTooltip'),
         somedayTooltip:       this.getSettingValue('somedayTooltip'),
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
       };
@@ -111,7 +117,11 @@ export default class ActionTrackerPlugin extends Plugin {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	async saveFilterSettings() {
+=======
+	async saveSettings() {
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 	async saveSettings() {
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
@@ -119,6 +129,7 @@ export default class ActionTrackerPlugin extends Plugin {
     await this.todoIndex.reloadIndex(this.getTodoItemIndexProps());
 	}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   async saveViewDisplaySettings() {
 		await this.saveData(this.settings);
@@ -141,6 +152,8 @@ export default class ActionTrackerPlugin extends Plugin {
     });
   }
 
+=======
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
 =======
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup)
   getSettingValue<K extends keyof ActionTrackerSettings>(setting: K): ActionTrackerSettings[K] {

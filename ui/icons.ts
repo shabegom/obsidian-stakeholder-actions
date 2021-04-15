@@ -106,6 +106,7 @@ const agingIcon = (title: string, description: string): string => `
   </g>
 </svg>
 <<<<<<< HEAD:ui/icons.ts
+<<<<<<< HEAD:ui/icons.ts
 `;
 
 const sortIcon = (title: string, description: string): string => `
@@ -123,6 +124,9 @@ const sortIcon = (title: string, description: string): string => `
   <path style="stroke-width:4;" d="M 0 0 C 6.660156 0 33.339844 0 40 0 M 0 0 C 6.660156 0 33.339844 0 40 0 " transform="matrix(0.2,0,0,0.2,6,14)"/>
 </svg>
 `;
+=======
+`;
+>>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/ui/icons.ts
 =======
 `;
 >>>>>>> parent of 55bb7fd (Merge pull request #21 from shabegom/typing-cleanup):src/ui/icons.ts
